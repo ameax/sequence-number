@@ -4,7 +4,6 @@ namespace Ameax\SequenceNumber\Tests;
 
 use Ameax\SequenceNumber\SequenceNumberServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -28,12 +27,11 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-//        config()->set('database.default', 'testing');
+        //        config()->set('database.default', 'testing');
         Schema::dropAllTables();
 
         $migration = include __DIR__.'/../database/migrations/create_sequence_number_tables.php.stub';
         $migration->up();
 
     }
-
 }
