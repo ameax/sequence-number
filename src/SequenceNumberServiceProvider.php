@@ -2,9 +2,9 @@
 
 namespace Ameax\SequenceNumber;
 
+use Ameax\SequenceNumber\Commands\SequenceNumberCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Ameax\SequenceNumber\Commands\SequenceNumberCommand;
 
 class SequenceNumberServiceProvider extends PackageServiceProvider
 {

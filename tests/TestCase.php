@@ -2,9 +2,9 @@
 
 namespace Ameax\SequenceNumber\Tests;
 
+use Ameax\SequenceNumber\SequenceNumberServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Ameax\SequenceNumber\SequenceNumberServiceProvider;
 
 class TestCase extends Orchestra
 {
