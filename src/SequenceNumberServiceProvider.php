@@ -2,7 +2,6 @@
 
 namespace Ameax\SequenceNumber;
 
-use Ameax\SequenceNumber\Commands\SequenceNumberCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -17,9 +16,7 @@ class SequenceNumberServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('sequence-number')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_sequence_number_table')
-            ->hasCommand(SequenceNumberCommand::class);
+            ->hasMigration('create_sequence_number_tables')
+            ->hasConfigFile('sequence-number');
     }
 }

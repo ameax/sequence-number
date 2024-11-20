@@ -74,10 +74,7 @@
         "laravel": {
             "providers": [
                 "Ameax\\SequenceNumber\\SequenceNumberServiceProvider"
-            ],
-            "aliases": {
-                "SequenceNumber": "Ameax\\SequenceNumber\\Facades\\SequenceNumber"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",

@@ -20,9 +20,24 @@
             <directory>tests</directory>
         </testsuite>
     </testsuites>
+    <coverage>
+        <report>
+            <html outputDirectory="build/coverage"/>
+            <text outputFile="build/coverage.txt"/>
+            <clover outputFile="build/logs/clover.xml"/>
+        </report>
+    </coverage>
     <logging>
         <junit outputFile="build/report.junit.xml"/>
     </logging>
+    <php>
+        <env name="DB_CONNECTION" value="mysql"/>
+        <env name="DB_DATABASE" value="sequence_number_test"/>
+        <env name="DB_HOST" value="127.0.0.1"/>
+        <env name="DB_USERNAME" value="root"/>
+        <env name="DB_PORT" value="3306"/>
+        <env name="DB_PASSWORD" value=""/>
+    </php>
     <source>
         <include>
             <directory suffix=".php">./src</directory>
