@@ -1,6 +1,6 @@
 {
     "name": "ameax/sequence-number",
-    "description": "This is my package sequence-number",
+    "description": "A laravel package to configure and generate sequence numbers for invoices",
     "keywords": [
         "ameax Unternehmenssoftware",
         "laravel",
