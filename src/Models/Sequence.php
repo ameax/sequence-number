@@ -2,7 +2,7 @@
 
 namespace Ameax\SequenceNumber\Models;
 
-use Domain\Commons\Models\SequenceCounter;
+use Ameax\SequenceNumber\Services\SequenceService;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -97,5 +97,15 @@ class Sequence extends Model
     public function counters(): HasMany
     {
         return $this->hasMany(SequenceCounter::class);
+    }
+
+    /**
+     * @throws \Throwable
+     */
+    public function next(): string
+    {
+        return SequenceService::make()
+            ->byToken($this->token)
+            ->next();
     }
 }

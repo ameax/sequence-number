@@ -7,6 +7,8 @@ use Ameax\SequenceNumber\Tests\TestCase;
 it('it generates a sequence number', function () {
     /** @var $this TestCase */
     $token = 'invoice';
+
+    /** @var Sequence $sequence */
     $sequence = Sequence::create([
         'token' => $token,
         'prefix' => 'INV',
@@ -33,6 +35,9 @@ it('it generates a sequence number', function () {
     $sequence->suffix = '-TEST';
     $sequence->save();
     expect(SequenceService::make()->byToken('invoice')->next())->toBe('INV-'.$year.'.005-TEST');
+
+    // Make sequence from model
+    expect($sequence->next())->toBe('INV-'.$year.'.006-TEST');
 
     $sequence->delete();
 
