@@ -115,7 +115,7 @@ The `sequence_counters` table tracks the current value of a sequence.
 3. **Generate the Next Sequence Number**
    Call `next()` to generate the next sequence number based on the configuration.
 
-#### Example:
+#### Using Sequence Service:
 ```php
 use Ameax\SequenceNumber\Services\SequenceService;
 
@@ -123,6 +123,13 @@ $sequenceService = SequenceService::make()->byToken('invoice');
 $nextSequence = $sequenceService->next();
 
 echo $nextSequence; // Example: INV2023.001
+```
+
+#### Using Sequence Model:
+```php
+$sequence = Sequence::where('token', 'invoice')->first();
+
+echo  $sequence->next();
 ```
 
 ### Validating a Sequence Number
