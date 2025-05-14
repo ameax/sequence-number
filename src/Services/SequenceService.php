@@ -43,10 +43,16 @@ class SequenceService
                 throw new Exception('Sequence not loaded.');
             }
 
+            $currentValue = 0;
+
+            if ($this->sequence->start_value) {
+                $currentValue = $this->sequence->start_value - 1;
+            }
+
             // Load or initialize the sequence counter
             $counter = SequenceCounter::firstOrCreate(
                 ['sequence_id' => $this->sequence->id],
-                ['current_value' => 0, 'year' => now()->year]
+                ['current_value' => $currentValue, 'year' => now()->year]
             );
 
             // Handle yearly reset if applicable

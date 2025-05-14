@@ -59,3 +59,18 @@ it('it generates a sequence number', function () {
     // Todo check year sequence and start_value
 
 });
+
+it('it generates a sequence number with start value', function () {
+    /** @var $this TestCase */
+    $token = 'invoice';
+
+    /** @var Sequence $sequence */
+    $sequence = Sequence::create([
+        'token' => $token,
+        'prefix' => 'INV',
+        'number_min_length' => null,
+        'start_value' => 2000,
+    ]);
+
+    expect(SequenceService::make()->byToken('invoice')->next())->toBe('INV2000');
+});

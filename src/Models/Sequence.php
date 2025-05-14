@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $token
  * @property string|null $prefix
  * @property string|null $suffix
- * @property int $current_value
+ * @property int $number_min_length
  * @property int $increment_by
  * @property string $year_format
  * @property string|null $year_separator
@@ -32,6 +32,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $check_digit_position
  * @property bool $reset_yearly
  * @property int|null $year
+ * @property int $start_value
  * @property ?array $payload
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
